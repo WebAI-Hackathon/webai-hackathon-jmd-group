@@ -32,6 +32,150 @@
 
         </div>
 
+        <tool name="adjust_audio" description="adjusts the volume of sounds based on context and description given by the user; 
+        should adjust multiple sound sliders at once if it fits with what the user asked; if the users description doesn't match any of the avaliable sounds,
+        simply don't do anything">
+            <prop name="desc" type="string"></prop>
+            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage"></prop>
+            <prop name="sliderNumber" type="number from 1 to 3" description="a number that represents which slider will be adjusted"></prop>
+        </tool>
+        <!--<tool name="adjust_water" description="adjusts the volume of sounds based on context and description given by the user">
+            <prop name="desc" type="string"></prop>
+            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage"></prop>
+        </tool>-->
+
+        <context name="sound_categories" id="categories">
+            Audio Player 1 id="forest": The sound of a calm forest, leaves falling
+            Audio Player 2 id="water": The sound of running water, maybe a river or the ocean waves
+            Audio Player 3 id="animals": The sounds of animals
+        </context>
+
+        <div id="main">
+            <div id="mySidenav" class="sidenav" style="width: 400px">
+                <img src="images\hover1.png" style="width: 60px; left: 330px; display: inline-block; bottom: 50%; position:fixed">
+                <div class="audioPlayer" id="forest">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer" id="water">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer" id="animals">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+                <div class="audioPlayer">
+                    <input type="range" id="vol" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+            </div>
+         </div>
+
         <!-- TV -->
         <div class="tv-container">
 

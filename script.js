@@ -1,42 +1,47 @@
-const form = document.getElementById('chat-form');
-const input = document.getElementById('user-input');
-const messages = document.getElementById('messages');
+const allSounds = [
+  '#forest',
+  '#water',
+  '#animals'
+]
 
-form.addEventListener('submit', function (e) {
+document.querySelectorAll('.audioPlayer').forEach(player => {
+            const audio = player.querySelector('audio');
+            const slider = player.querySelector('.volumeSlider');
 
-    e.preventDefault();
+            // Set initial volume
+            audio.volume = slider.value;
 
-    const text = input.value.trim();
+            // Update volume when slider changes
+            slider.addEventListener('input', () => {
+                audio.play();
+                audio.volume = +slider.value/100;
+            });
+        });
 
-    if (!text) return;
+let searchState = {
+  message: '',
+};
 
-
-    // Crear mensaje del usuario
-    const userMsg = document.createElement('div');
-
-    userMsg.className = 'max-w-[70%] bg-blue-500 text-white p-3 rounded-xl self-end';
-
-    userMsg.textContent = text;
-    
-    messages.appendChild(userMsg);
-
-
-    input.value = '';
-    messages.scrollTop = messages.scrollHeight;
-
-
-    // Simular respuesta del "bot"
-    setTimeout(() => {
-
-        const botMsg = document.createElement('div');
-
-        botMsg.className = 'max-w-[70%] bg-gray-300 text-gray-900 p-3 rounded-xl self-start';
-
-        botMsg.textContent = 'Respuesta automática del bot.';
-
-        messages.appendChild(botMsg);
-
-        messages.scrollTop = messages.scrollHeight;
-
-    }, 800);
+document.querySelector('[name=adjust_audio]').addEventListener('call', async (e) => {
+  const { desc } = e.detail;
+  const { value } = e.detail;
+  const { sliderNumber } = e.detail;
+  console.log(value);
+  console.log(sliderNumber);
+  document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]').value = value;
+  adjustAudio(document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]'), value, allSounds[sliderNumber-1] + ' audio');
 });
+
+//document.querySelector('[name=adjust_water]').addEventListener('call', async (e) => {
+  //const { desc } = e.detail;
+  //const { value } = e.detail;
+  //console.log(value);
+  //adjustAudio(document.querySelector('#water input[type=range]'), value, "#water audio");
+//});
+
+function adjustAudio(desc, value, tag) {
+    desc.value = value
+    document.querySelector(tag).volume = value/100;
+    document.querySelector(tag).play();
+    console.log(desc)   
+  };
