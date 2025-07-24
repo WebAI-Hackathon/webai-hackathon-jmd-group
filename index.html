@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Stylesheets-->
-        <link rel="stylesheet" href="css/style.ss">
+        <link rel="stylesheet" href="css/style.css">
 
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,40 +25,33 @@
 
     </head>
 
-    <body class="h-screen flex flex-col bg-amber-100 font-[Roboto] font-semibold">
+    <body>
 
-        <header class="flex p-4 bg-gray-950 h-14 w-full ">
+        <div id="prompt-container">
 
-            <div class=""></div>
+            <form id="gen-form">
 
-        </header>
+                <input id="prompt" type="text" placeholder="Describe an image...">
 
-        <!-- Messages -->
-        <div id="messages" class="flex-1 overflow-y-auto p-20 flex flex-col px-30">
+            </form>
 
-            <!-- Bot msg -->
-            <div class="self-start">
+        </div>
 
-                <div class="max-w-[70%] break-words bg-gray-300 text-gray-900 p-3 rounded-xl">
+        <!-- TV -->
+        <div class="tv-container">
 
-                    estamos dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro dentro 
+            <div class="tv-wrapper">
+                
+                <img src="images/tv screen.png" class="tv-frame">
 
+                <!--Screen-->
+                <div class="tv-screen" id="screen">
+                    <img src="images/staticTV.gif" style="object-fit: cover; width: 100%; height: 100%; opacity: 100%;" alt="">
                 </div>
 
             </div>
 
         </div>
-
-        <!-- Chatbar -->
-        <form id="chat-form" class="flex p-4 bg-amber-100">
-            <input
-                id="user-input"
-                type="text"
-                placeholder="Send message..."
-                class="flex-1 p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                autocomplete="off"
-            />
-        </form>
 
     <script src="script.js"></script>
     </body>

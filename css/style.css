@@ -1,3 +1,83 @@
-#chat-form{
-    border-color: transparent;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* ----------------------------------------- TV screen ----------------------------------------- */
+.tv-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tv-frame {
+    height: 100%;
+    width: auto;
+    display: block;
+    z-index: 2;
+}
+
+.tv-screen {
+    position: absolute;
+    width: 52.2%;
+    height: 75.4%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: cyan;
+    z-index: 1;
+}
+
+/* ----------------------------------------- Prompt bar ----------------------------------------- */
+#prompt-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+#gen-form {
+    width: 100%;
+    max-width: 30vw;
+}
+
+#gen-form input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    backdrop-filter: blur(5px);
+}
+
+#gen-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
