@@ -62,7 +62,9 @@ html, body {
 
 
 #screen { /* HERE GOES THE GEN IMAGE */
-
+    background: url('../images/vinyl.gif') center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #staticTV {
@@ -155,7 +157,9 @@ html, body {
     cursor: pointer;
 }
 
-#main {
+/* --------------------------- Navbar --------------------------- */
+
+/* #main {
   transition: margin-left .5s;
   display: inline-block;
   height: 100%;
@@ -177,18 +181,126 @@ html, body {
     background-color: black;
     transform: translateX(-80%);
     height: 100%;
-    overflow: auto;
+    overflow-x: hidden;
+    width: 400px;
+}
+
+#iconHover{
+    width: 60px;
+    left: 330px;
+    display: inline-block;
+    bottom: 50%;
+    position:fixed
 }
 
 .audioPlayer {
     width: 320px;
-    display: inline-block;
+    display: block;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.audioPlayer p{
+    color: white;
+    font-family: 'Teletactile';
 }
 
 .volumeSlider {
     width: 320px;
     accent-color: white;
+} */
+
+#iconHover{
+    width: 2.5%;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 999;
 }
+
+#iconHover:hover{
+    cursor: pointer;
+}
+
+#sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: red;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+
+.audioPlayer{
+    padding: 30px 20px 0px 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+.audioPlayer p{
+    color: white;
+    font-family: 'Teletactile';
+}
+
+.volumeSlider{
+    width: 100%;
+}
+
+.closeButton{
+    position: absolute;
+    right: 25px;
+    font-size: 2em;
+    top: 0px;
+}
+
+/* --------------------------- Input range styling --------------------------- */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #f7f7f7e1;
+    height: 0.5rem;
+    border-radius: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -2.6px; /* Centers thumb on the track */
+    background-color: #05001f;
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 10px;
+}
+
+/* --------------------------- Scroll bar --------------------------- */
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
 
 tool, context {
     display: none
