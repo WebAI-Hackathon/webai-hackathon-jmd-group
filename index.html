@@ -17,7 +17,6 @@
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!--Tailwind-->
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -29,11 +28,7 @@
 
         <div id="prompt-container">
 
-            <form id="gen-form">
-
-                <input id="prompt" type="text" placeholder="Describe an image...">
-
-            </form>
+            <button id="gen-form">Generate image</button>
 
         </div>
 
@@ -46,7 +41,15 @@
 
                 <!--Screen-->
                 <div class="tv-screen" id="screen">
-                    <img src="images/staticTV.gif" style="object-fit: cover; width: 100%; height: 100%; opacity: 100%;" alt="">
+
+                    <img src="images/staticTV2.gif" id="staticTV" alt="">
+                    
+                    <p id="channel">Ch. 01</p>
+
+                    <p id="wait"> <span id="waitText">Click me daddy 🥵</span> </p>
+
+                    <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
+
                 </div>
 
             </div>
