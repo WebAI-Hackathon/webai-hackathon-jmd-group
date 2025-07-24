@@ -62,9 +62,7 @@ html, body {
 
 
 #screen { /* HERE GOES THE GEN IMAGE */
-    background: url('../images/vinyl.gif') center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 #staticTV {
