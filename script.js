@@ -279,7 +279,3 @@ function hover() {
 function unhover() {
     document.getElementById("staticTV").style.opacity = "30%"
 }
-
-function start() { //here comes the preset
-    document.getElementById
-}
