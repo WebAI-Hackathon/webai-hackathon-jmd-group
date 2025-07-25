@@ -32,18 +32,20 @@
 
         </div>
 
-        <tool name="adjust_audio" description="adjusts the volume of sounds based on context and description given by the user; 
-        should adjust multiple sound sliders at once if it fits with what the user asked; the more detailed a user's description is, the more audio tracks should be turned on; if the users description doesn't match any of the avaliable sounds,
-        simply don't do anything">
+        <tool name="adjust_audio" description="Adjusts the volume of one or more sound sliders based on a user description.">
             <prop name="desc" type="string"></prop>
-            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage of how loud each sound is; should always
-            be changed for the relevant audio tracks of the user's request"></prop>
-            <prop name="sliderNumber" type="number from 1 to 27" description="a number that represents which slider will be adjusted based on the description given by the user"></prop>
+            <prop name="value" type="number from 0 to 100"></prop>
+            <prop name="sliderNumbers" type="array of numbers from 1 to 27" description="List of sliders that match the description and should be adjusted."></prop>
         </tool>
 
         <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different">
             <prop name="desc" type="string"></prop>
         </tool>
+
+        <tool name="generate_image" description="Generates an image based on the current slider values.">
+            <prop name="trigger" type="string" description="A word that represents the intention of the user, such as: create, generate, etc..."/>
+        </tool>
+
 
         <context name="sound_categories" id="categories">
             Audio Player 1 id="wind": The wind howling
