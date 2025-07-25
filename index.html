@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>DreamTuner</title>
-        <link rel="icon" href="images/favicon.png">
+        <link rel="icon" href="images/favicon.png"
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Stylesheets-->
@@ -37,13 +37,13 @@
             <prop name="value" type="number from 0 to 100"></prop>
             <prop name="sliderNumbers" type="array of numbers from 1 to 27" description="List of sliders that match the description and should be adjusted."></prop>
         </tool>
-
-        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different">
+       
+        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different"
             <prop name="desc" type="string"></prop>
         </tool>
 
-        <tool name="generate_image" description="Generates an image based on the current slider values.">
-            <prop name="trigger" type="string" description="A word that represents the intention of the user, such as: create, generate, etc..."/>
+        <tool name="generate_image" description="Genera una imagen basándose en los valores actuales de los sliders de audio.">
+            <prop name="trigger" type="string" description="Una palabra que representa la intención del usuario, como 'crear', 'generar', 'imagen', etc."/>
         </tool>
 
 
@@ -249,7 +249,7 @@
         <!-- TV -->
         <div class="tv-container">
 
-            <div class="tv-wrapper" id="tv-wrapper">
+            <div id="tv-wrapper">
                 
                 <img src="images/tv screen.png" class="tv-frame">
 
@@ -271,8 +271,8 @@
             </div>
 
         </div>
-        
-        <div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>
+
+        <!--<div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>-->
 
     <script src="script.js"></script>
     </body>
