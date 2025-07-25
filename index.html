@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Chatbot</title>
-        <link rel="icon" href="images/favicon.jpg">
+        <link rel="icon" href="images/favicon.jpg"
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Stylesheets-->
@@ -33,12 +33,11 @@
         </div>
 
         <tool name="adjust_audio" description="adjusts the volume of sounds based on context and description given by the user; 
-        should adjust multiple sound sliders at once if it fits with what the user asked; the more detailed a user's description is, the more audio tracks should be turned on; if the users description doesn't match any of the avaliable sounds,
+        should adjust multiple sound sliders at once if it fits with what the user asked; if the users description doesn't match any of the avaliable sounds,
         simply don't do anything">
             <prop name="desc" type="string"></prop>
-            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage of how loud each sound is; should always
-            be changed for the relevant audio tracks of the user's request"></prop>
-            <prop name="sliderNumber" type="number from 1 to 27" description="a number that represents which slider will be adjusted based on the description given by the user"></prop>
+            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage"></prop>
+            <prop name="sliderNumber" type="number from 1 to 3" description="a number that represents which slider will be adjusted"></prop>
         </tool>
         <!--<tool name="adjust_water" description="adjusts the volume of sounds based on context and description given by the user">
             <prop name="desc" type="string"></prop>
@@ -46,33 +45,9 @@
         </tool>-->
 
         <context name="sound_categories" id="categories">
-            Audio Player 1 id="wind": The wind howling
-            Audio Player 2 id="rain": Sound of rain pouring
-            Audio Player 3 id="stream": The sound of running water, maybe a river or the ocean waves
-            Audio Player 4 id="waves": The waves moving over the ocean
-            Audio Player 5 id="forest": The sound of a calm forest, leaves falling
-            Audio Player 6 id="campfire": A lit campfire crackling
-            Audio Player 7 id="crickets": Crickets making their noise
-            Audio Player 8 id="owl": Owls hooting
-            Audio Player 9 id="frogs": Frogs ribbiting with some forest sounds in the back
-            Audio Player 10 id="wolf": Wolves howling
-            Audio Player 11 id="dog": Stupid dog barking like an idiot
-            Audio Player 12 id="cat": The purring of a cat
-            Audio Player 13 id="traffic": Vehicles passing by
-            Audio Player 14 id="ambulance": The sounds of an ambulance passing by
-            Audio Player 15 id="construction": Sounds of a construction site
-            Audio Player 16 id="people": People chattering
-            Audio Player 17 id="baby": Baby crying
-            Audio Player 18 id="fireworks": Fireworks exploding, like in a festival or the new years
-            Audio Player 19 id="keyboard": 
-            Audio Player 20 id="clock":
-            Audio Player 21 id="telephone": A ringing phone
-            Audio Player 22 id="ventilator": A ventilating fan turned on
-            Audio Player 23 id="fridge": 
-            Audio Player 24 id="tv":
-            Audio Player 25 id="lo-fi":
-            Audio Player 26 id="arcade"
-            Audio Player 27 id="classical"
+            Audio Player 1 id="forest": The sound of a calm forest, leaves falling
+            Audio Player 2 id="water": The sound of running water, maybe a river or the ocean waves
+            Audio Player 3 id="animals": The sounds of animals
         </context>
 
         <img src="images\hover1.png" id="iconHover" onclick="openNav()">
@@ -80,174 +55,188 @@
         <div id="sidenav">
 
             <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
-
-                <div class="audioPlayer" id="wind">
-                    <p>Wind</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\wind.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="rain">
-                    <p>Rain</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\rain.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="stream">
-                    <p>Water Stream</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\stream.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="waves">
-                    <p>Waves</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\waves.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
+                
                 <div class="audioPlayer" id="forest">
                     <p>Forest</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\forest.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="campfire">
-                    <p>Campfire</p>
+                <div class="audioPlayer" id="water">
+                    <p>Water</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\campfire.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="crickets">
-                    <p>Crickets</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\crickets.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="owl">
-                    <p>Owl</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\owl.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="frogs">
-                    <p>Frogs</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\frogs.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="wolf">
-                    <p>Wolf</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\wolf.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="dog">
-                    <p>Dog</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\dog.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="cat">
-                    <p>Purring Cat</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\cat.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="traffic">
-                    <p>Traffic</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\traffic.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="ambulance">
+                <div class="audioPlayer">
                     <p>Ambulance</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ambulance.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="construction">
-                    <p>Construction</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\construction.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="people">
-                    <p>People</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\people.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="baby">
+                <div class="audioPlayer">
                     <p>Baby</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\baby.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="fireworks">
+                <div class="audioPlayer">
+                    <p>Campfire</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Purring cat</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Construction</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Crickets</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Barking dog that sounds like shit</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
                     <p>Fireworks</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\fireworks.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="keyboard">
-                    <p>Keyboard</p>
+                <div class="audioPlayer">
+                    <p>Forest</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\keyboard.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="clock">
-                    <p>Ticking Clock</p>
+                <div class="audioPlayer">
+                    <p>Frogs</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\clock.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="telephone">
-                    <p>Ringing Phone</p>
+                <div class="audioPlayer">
+                    <p>Owl</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\telephone.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="ventilator">
-                    <p>Ventilator Fan</p>
+                <div class="audioPlayer">
+                    <p>People talking</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ventilator.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="fridge">
-                    <p>Fridge</p>
+                <div class="audioPlayer">
+                    <p>Rain</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\fridge.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="tv">
-                    <p>TV</p>
+                <div class="audioPlayer">
+                    <p>Stream</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\tv.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="lo-fi">
-                    <p>Lo-Fi</p>
+                <div class="audioPlayer">
+                    <p>Ringing phone</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\lo-fi.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="arcade">
-                    <p>Arcade Music</p>
+                <div class="audioPlayer">
+                    <p>Traffic</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\arcade.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="classical">
-                    <p>Classical Music</p>
+                <div class="audioPlayer">
+                    <p>Fan</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\classical.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
                 </div>
-         </div>
+
+                <div class="audioPlayer">
+                    <p>Waves</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Wind</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Wolf</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Pene</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Piroca</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Sapatona</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Safada</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Safadinha</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>Jiromba</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+                <div class="audioPlayer">
+                    <p>heheheha</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="https://us-tuna-sounds-files.voicemod.net/e8862513-f260-4021-b7c6-86d2db4fa479-1673565097046.mp3" autoplay loop type="audio/mpeg"></audio>
+                </div>
+
+            
+        </div>
 
         <!-- TV -->
         <div class="tv-container">
 
-            <div class="tv-wrapper" id="tv-wrapper">
+            <div class="tv-wrapper">
                 
                 <img src="images/tv screen.png" class="tv-frame">
 
@@ -256,11 +245,9 @@
 
                     <img src="images/staticTV2.gif" id="staticTV" alt="">
                     
-                    <img src="images/vinyl.gif" id="imageTV">
-                    
                     <p id="channel">Ch. 01</p>
 
-                    <p id="wait"> <button id="waitText"> <-select the sounds that you prefer</button> </p>
+                    <p id="wait"> <span id="waitText">Click me daddy 🥵</span> </p>
 
                     <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
 
@@ -269,6 +256,8 @@
             </div>
 
         </div>
+
+        <div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>
 
     <script src="script.js"></script>
     </body>

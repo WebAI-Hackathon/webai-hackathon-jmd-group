@@ -161,3 +161,16 @@ function openNav() {
 function closeNav() {
   document.getElementById("sidenav").style.width = "0";
 }
+
+//Start Preset
+function hover() {
+    document.getElementById("staticTV").style.opacity = "70%";
+}
+
+function unhover() {
+    document.getElementById("staticTV").style.opacity = "30%"
+}
+
+function start() { //here comes the preset
+    document.getElementById
+}
