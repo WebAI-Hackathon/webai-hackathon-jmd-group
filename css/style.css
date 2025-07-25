@@ -193,59 +193,6 @@ html, body {
     cursor: pointer;
 }
 
-/* --------------------------- Navbar --------------------------- */
-
-/* #main {
-  transition: margin-left .5s;
-  display: inline-block;
-  height: 100%;
-  position: fixed;
-  z-index: 1000;
-}
-
-#main div {
-    transition: transform .2s ease-in-out;
-}
-
-#main div:hover {
-    transform: translateX(0%);
-}
-
-#mySidenav {
-    display: flex;
-    display: inline-block;
-    background-color: black;
-    transform: translateX(-80%);
-    height: 100%;
-    overflow-x: hidden;
-    width: 400px;
-}
-
-#iconHover{
-    width: 60px;
-    left: 330px;
-    display: inline-block;
-    bottom: 50%;
-    position:fixed
-}
-
-.audioPlayer {
-    width: 320px;
-    display: block;
-    margin-top: 20px;
-    margin-left: 50px;
-}
-
-.audioPlayer p{
-    color: white;
-    font-family: 'Teletactile';
-}
-
-.volumeSlider {
-    width: 320px;
-    accent-color: white;
-} */
-
 #iconHover{
     width: 2.5%;
     position: fixed;

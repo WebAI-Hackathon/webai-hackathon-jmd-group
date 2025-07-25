@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Chatbot</title>
-        <link rel="icon" href="images/favicon.jpg"
+        <link rel="icon" href="images/favicon.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Stylesheets-->
@@ -40,11 +40,8 @@
             be changed for the relevant audio tracks of the user's request"></prop>
             <prop name="sliderNumber" type="number from 1 to 27" description="a number that represents which slider will be adjusted based on the description given by the user"></prop>
         </tool>
-        <!--<tool name="adjust_water" description="adjusts the volume of sounds based on context and description given by the user">
-            <prop name="desc" type="string"></prop>
-            <prop name="value" type="number from 0 to 100" description="a number from 0 to 100 interpreted as a percentage"></prop>
-        </tool>-->
-        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different"
+
+        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different">
             <prop name="desc" type="string"></prop>
         </tool>
 
@@ -250,7 +247,7 @@
         <!-- TV -->
         <div class="tv-container">
 
-            <div id="tv-wrapper">
+            <div class="tv-wrapper" id="tv-wrapper">
                 
                 <img src="images/tv screen.png" class="tv-frame">
 
@@ -272,8 +269,8 @@
             </div>
 
         </div>
-
-        <!--<div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>-->
+        
+        <div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>
 
     <script src="script.js"></script>
     </body>
