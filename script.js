@@ -272,6 +272,10 @@ function start() { //here comes the preset
     document.getElementById("startButton").remove();
 }
 
+function hover() {
+    document.getElementById("staticTV").style.opacity = "70%";
+}
+
 function unhover() {
     document.getElementById("staticTV").style.opacity = "30%"
 }
