@@ -232,10 +232,44 @@ function openNav() {
 function closeNav() {
   document.getElementById("sidenav").style.width = "0";
 }
-/*
-//Start Preset
-function hover() {
-    document.getElementById("staticTV").style.opacity = "70%";
+function start() { //here comes the preset
+    document.getElementById("tv-wrapper").innerHTML = `<img src="images/tv screen.png" class="tv-frame">
+
+                <!--Screen-->
+                <div class="tv-screen" id="screen">
+
+                    <img src="images/staticTV2.gif" id="staticTV" alt="">
+                    
+                    <img src="images/raw.png" id="imageTV" style="width: 100%; height: auto">
+                    
+                    <p id="channel">Ch. 01</p>
+
+                    <p id="waitText"> <-select the sounds that you prefer</p>
+
+                    <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
+
+                </div>`;
+    document.querySelectorAll('.audioPlayer').forEach(player => {
+            const audio = player.querySelector('audio');
+            const slider = player.querySelector('.volumeSlider');
+
+            // Set initial volume
+            audio.volume = 0;
+            slider.value = 0;
+        });
+    document.getElementById("forest").querySelector("input").value = 60;
+    document.getElementById("forest").querySelector("audio").volume = 0.6;
+    document.getElementById("forest").querySelector("audio").play();
+    document.getElementById("campfire").querySelector("input").value = 40;
+    document.getElementById("campfire").querySelector("audio").volume = 0.4;
+    document.getElementById("campfire").querySelector("audio").play();
+    document.getElementById("wind").querySelector("input").value = 60;
+    document.getElementById("wind").querySelector("audio").volume = 0.6;
+    document.getElementById("wind").querySelector("audio").play();
+    document.getElementById("crickets").querySelector("input").value = 30;
+    document.getElementById("crickets").querySelector("audio").volume = 0.3;
+    document.getElementById("crickets").querySelector("audio").play();
+    document.getElementById("startButton").remove();
 }
 
 function unhover() {
@@ -244,4 +278,4 @@ function unhover() {
 
 function start() { //here comes the preset
     document.getElementById
-}*/
+}
