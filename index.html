@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Chatbot</title>
-        <link rel="icon" href="images/favicon.jpg">
+        <link rel="icon" href="images/favicon.jpg"
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Stylesheets-->
@@ -57,22 +57,22 @@
             Audio Player 9 id="frogs": Frogs ribbiting with some forest sounds in the back
             Audio Player 10 id="wolf": Wolves howling
             Audio Player 11 id="dog": Stupid dog barking like an idiot
-            Audio Player 12 id="cat": The purring of a cat
-            Audio Player 13 id="traffic": Vehicles passing by
+            Audio Player 12 id="cat_purring": The purring of a cat
+            Audio Player 13 id="traffic_vehicles": Vehicles passing by
             Audio Player 14 id="ambulance": The sounds of an ambulance passing by
-            Audio Player 15 id="construction": Sounds of a construction site
-            Audio Player 16 id="people": People chattering
-            Audio Player 17 id="baby": Baby crying
+            Audio Player 15 id="construction_site": Sounds of a construction site
+            Audio Player 16 id="people_chattering": People chattering
+            Audio Player 17 id="crying_Baby": Baby crying
             Audio Player 18 id="fireworks": Fireworks exploding, like in a festival or the new years
             Audio Player 19 id="keyboard": 
             Audio Player 20 id="clock":
             Audio Player 21 id="telephone": A ringing phone
             Audio Player 22 id="ventilator": A ventilating fan turned on
             Audio Player 23 id="fridge": 
-            Audio Player 24 id="tv":
-            Audio Player 25 id="lo-fi":
-            Audio Player 26 id="arcade"
-            Audio Player 27 id="classical"
+            Audio Player 24 id="tv_muffled":
+            Audio Player 25 id="lo-fi_music":
+            Audio Player 26 id="arcade_music"
+            Audio Player 27 id="classical_music"
         </context>
 
         <img src="images\hover1.png" id="iconHover" onclick="openNav()">
@@ -93,13 +93,13 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\rain.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="stream">
+                <div class="audioPlayer" id="water_stream">
                     <p>Water Stream</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\stream.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="waves">
+                <div class="audioPlayer" id="ocean_waves">
                     <p>Waves</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\waves.ogg" autoplay loop type="audio/ogg"></audio>
@@ -141,19 +141,19 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\wolf.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="dog">
+                <div class="audioPlayer" id="dog-barking">
                     <p>Dog</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\dog.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="cat">
+                <div class="audioPlayer" id="cat-purring">
                     <p>Purring Cat</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\cat.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="traffic">
+                <div class="audioPlayer" id="traffic-vehicles">
                     <p>Traffic</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\traffic.ogg" autoplay loop type="audio/ogg"></audio>
@@ -165,19 +165,19 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\ambulance.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="construction">
+                <div class="audioPlayer" id="construction-site">
                     <p>Construction</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\construction.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="people">
+                <div class="audioPlayer" id="people-chattering">
                     <p>People</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\people.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="baby">
+                <div class="audioPlayer" id="baby-crying">
                     <p>Baby</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\baby.ogg" autoplay loop type="audio/ogg"></audio>
@@ -225,19 +225,19 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\tv.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="lo-fi">
+                <div class="audioPlayer" id="lo-fi-music">
                     <p>Lo-Fi</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\lo-fi.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="arcade">
+                <div class="audioPlayer" id="arcade-music">
                     <p>Arcade Music</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\arcade.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="classical">
+                <div class="audioPlayer" id="classical-music">
                     <p>Classical Music</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\classical.ogg" autoplay loop type="audio/ogg"></audio>
@@ -247,7 +247,7 @@
         <!-- TV -->
         <div class="tv-container">
 
-            <div class="tv-wrapper" id="tv-wrapper">
+            <div id="tv-wrapper">
                 
                 <img src="images/tv screen.png" class="tv-frame">
 
@@ -260,7 +260,7 @@
                     
                     <p id="channel">Ch. 01</p>
 
-                    <p id="wait"> <button id="waitText"> <-select the sounds that you prefer</button> </p>
+                    <p id="waitText"> <-select the sounds that you prefer</p>
 
                     <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
 
@@ -269,6 +269,8 @@
             </div>
 
         </div>
+
+        <!--<div id="startButton" onmouseenter="hover()" onmouseleave="unhover()" onclick="start()"></div>-->
 
     <script src="script.js"></script>
     </body>

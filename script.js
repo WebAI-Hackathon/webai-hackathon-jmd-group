@@ -1,32 +1,25 @@
 const allSounds = [
-  '#wind',
-  '#rain',
-  '#stream',
-  '#waves',
   '#forest',
-  '#campfire',
-  '#crickets',
-  '#owl',
-  '#frogs',
-  '#wolf',
-  '#dog',
-  '#cat',
-  '#traffic',
+  '#water',
   '#ambulance',
-  '#construction',
-  '#people',
   '#baby',
+  '#campfire',
+  '#cat',
+  '#construction',
+  '#crickets',
+  '#dog',
   '#fireworks',
-  '#keyboard',
-  '#clock',
+  '#frogs',
+  '#owl',
+  '#people',
+  '#rain',
   '#telephone',
-  '#ventilator',
-  '#fridge',
-  '#tv',
-  '#lo-fi',
-  '#arcade',
-  '#classical'
-];
+  '#traffic',
+  '#fan',
+  '#waves',
+  '#wind',
+  '#wolf'
+]
 
 /*
 document.getElementById("waitText") = async () => {
@@ -94,38 +87,68 @@ function adjustAudio(desc, value, tag) {
     console.log(desc)   
   };
 
- document.getElementById('gen-form').onclick = async () => {
+
+
+document.getElementById('gen-form').onclick = async () => {
   let audioValues = [];
-  let prompt = "relaxing "
+  let prompt = "Se presentaran conceptos y valores numéricos, niveles. La página genera imágenes a partir de lo que se escucha y cuánto -Si el valor se acerca a 100, más predominante es en la imagen generada. Mientras más a 0, más pequeño, o más lejano-. Las imagenes producidas deben ser fotorealistas, nunca animadas. Las imagenes serán paisajes o escenarios, habitaciones, nunca folletos, o retratos. Incluye todos los elementos en la imagen. Si varios elementos tienen un valor igual o similar, deben tener el mismo protagonismo en la imagen. A continuación, el valor seguido del concepto:"
+  let totalValue = 0;
+
+  document.getElementById("waitText").style.visibility = "visible";
+
   document.querySelectorAll('.audioPlayer').forEach(r => {
     let valueName = "";
-    let value = r.querySelector("input").value;
-    if (value == 0) {
+    let value = parseInt(r.querySelector("input").value);
+    totalValue += value;
 
-    } else if (value > 0 && value <= 30) {
-      valueName = "small ";
+    if (value != 0) {
+        valueName = value;
+        audioValues.push({id: r.id, value: valueName})
+    }
+
+    /*
+    if (value > 0 && value <= 30) {
+      valueName = "";
       audioValues.push({id: r.id, value: valueName});
-    } else if (value > 30 && value <=60) {
+    } else if (value > 30 && value <= 60) {
       valueName = "medium ";
       audioValues.push({id: r.id, value: valueName});
-    } else {
+    } else if (value > 60) {
       valueName = "big ";
       audioValues.push({id: r.id, value: valueName});
     }
+    */
+
     console.log(audioValues);
-  })
+
+  });
+
+  if (totalValue === 0) {
+    console.log("All values are zero, image won't generate");
+    document.getElementById("waitText").innerHTML = "Select at least one sound to generate an image.";
+    return;
+  }
+
   audioValues.forEach(v => {
     prompt = prompt + " " + v.value + " " + v.id;
-  })
+  });
   console.log(prompt);
-  try {
+    try {
         document.getElementById("waitText").innerHTML = "Generating image...";
         const imageUrl = await generateImage(prompt);
-        document.getElementById("tv-wrapper").innerHTML = `<img src="images/tv screen.png" class="tv-frame"><div class="tv-screen" id="screen"><img src="images/staticTV2.gif" id="staticTV" alt=""><img src="data:image/png;base64,${imageUrl}" id="imageTV"><p id="channel">Ch. 01</p><p id="wait"></p><img src="images/tvLogo_1.gif" id="TVlogo" alt=""></div>`;
-      } catch (err) {
+        document.getElementById("tv-wrapper").innerHTML = `
+            <img src="images/tv screen.png" class="tv-frame">
+            <div class="tv-screen" id="screen">
+                <img src="images/staticTV2.gif" id="staticTV" alt="">
+                <img src="data:image/png;base64,${imageUrl}" id="genImage">
+                <p id="channel">Ch. 01</p>
+                <p id="waitText" style="visibility: hidden;">placeholder</p>
+                <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
+            </div>`;
+    } catch (err) {
         console.error(err);
         document.getElementById('screen').innerHTML = `<span class="warn">Error: ${err.message}</span>`;
-      }
+    }
 }
 
 const OPENAI_API_KEY = 'sk-Uyd5NxnfGjQR-S7UN2eJGQ'; // Replace with your API key
@@ -144,7 +167,7 @@ const OPENAI_API_KEY = 'sk-Uyd5NxnfGjQR-S7UN2eJGQ'; // Replace with your API key
             model: "hackathon/text2image",
             prompt: prompt,
             n: 1,
-            size: "1036x1085"
+            size: "1013x772"
           })
         });
 
@@ -159,8 +182,11 @@ const OPENAI_API_KEY = 'sk-Uyd5NxnfGjQR-S7UN2eJGQ'; // Replace with your API key
         throw err;
       }
     }
+
+
     
-    //Sidenav
+//Sidenav
+
 function openNav() {
   document.getElementById("sidenav").style.width = "250px";
 }
@@ -168,3 +194,16 @@ function openNav() {
 function closeNav() {
   document.getElementById("sidenav").style.width = "0";
 }
+/*
+//Start Preset
+function hover() {
+    document.getElementById("staticTV").style.opacity = "70%";
+}
+
+function unhover() {
+    document.getElementById("staticTV").style.opacity = "30%"
+}
+
+function start() { //here comes the preset
+    document.getElementById
+}*/
