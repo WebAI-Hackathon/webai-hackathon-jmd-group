@@ -46,33 +46,33 @@
         </tool>-->
 
         <context name="sound_categories" id="categories">
-            Audio Player 1 id="forest": The sound of a calm forest, leaves falling
-            Audio Player 2 id="water": The sound of running water, maybe a river or the ocean waves
-            Audio Player 3 id="ambulance": The sounds of an ambulance passing by
-            Audio Player 4 id="baby": Baby crying
-            Audio Player 5 id="campfire": A lit campfire crackling
-            Audio Player 6 id="cat": The purring of a cat
-            Audio Player 7 id="construction": Sounds of a construction site
-            Audio Player 8 id="crickets": Crickets making their noise
-            Audio Player 9 id="dog": Stupid dog barking like an idiot
-            Audio Player 10 id="fireworks": Fireworks exploding, like in a festival or the new years
-            Audio Player 11 id="frogs": Frogs ribbiting with som forest sounds in the back
-            Audio Player 12 id="owl": Owls hooting
-            Audio Player 13 id="people": People chattering
-            Audio Player 14 id="rain": Sound of rain pouring
-            Audio Player 15 id="telephone": A ringing Phone
-            Audio Player 16 id="traffic": Vehicles passing by
-            Audio Player 17 id='fan': A ventilating fan turned on
-            Audio Player 18 id="waves": The waves moving over the ocean
-            Audio Player 19 id="wind": The wind howling
-            Audio Player 20 id="wolf": Wolves howling
-            Audio Player 21
-            Audio Player 22
-            Audio Player 23
-            Audio Player 24
-            Audio Player 25
-            Audio Player 26
-            Audio Player 27
+            Audio Player 1 id="wind": The wind howling
+            Audio Player 2 id="rain": Sound of rain pouring
+            Audio Player 3 id="stream": The sound of running water, maybe a river or the ocean waves
+            Audio Player 4 id="waves": The waves moving over the ocean
+            Audio Player 5 id="forest": The sound of a calm forest, leaves falling
+            Audio Player 6 id="campfire": A lit campfire crackling
+            Audio Player 7 id="crickets": Crickets making their noise
+            Audio Player 8 id="owl": Owls hooting
+            Audio Player 9 id="frogs": Frogs ribbiting with some forest sounds in the back
+            Audio Player 10 id="wolf": Wolves howling
+            Audio Player 11 id="dog": Stupid dog barking like an idiot
+            Audio Player 12 id="cat": The purring of a cat
+            Audio Player 13 id="traffic": Vehicles passing by
+            Audio Player 14 id="ambulance": The sounds of an ambulance passing by
+            Audio Player 15 id="construction": Sounds of a construction site
+            Audio Player 16 id="people": People chattering
+            Audio Player 17 id="baby": Baby crying
+            Audio Player 18 id="fireworks": Fireworks exploding, like in a festival or the new years
+            Audio Player 19 id="keyboard": 
+            Audio Player 20 id="clock":
+            Audio Player 21 id="telephone": A ringing phone
+            Audio Player 22 id="ventilator": A ventilating fan turned on
+            Audio Player 23 id="fridge": 
+            Audio Player 24 id="tv":
+            Audio Player 25 id="lo-fi":
+            Audio Player 26 id="arcade"
+            Audio Player 27 id="classical"
         </context>
 
         <img src="images\hover1.png" id="iconHover" onclick="openNav()">
@@ -81,82 +81,10 @@
 
             <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
 
-                <div class="audioPlayer" id="forest">
-                    <p>Forest</p>
+                <div class="audioPlayer" id="wind">
+                    <p>Wind</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\forest.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="water">
-                    <p>Water</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\stream.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="ambulance">
-                    <p>Ambulance</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ambulance.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="baby">
-                    <p>Baby</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\baby.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="campfire">
-                    <p>Campfire</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\campfire.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="cat">
-                    <p>Purring cat</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\cat.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="construction">
-                    <p>Construction</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\construction.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="crickets">
-                    <p>Crickets</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\crickets.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="dog">
-                    <p>Barking dog that sounds like shit</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\dog.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="fireworks">
-                    <p>Fireworks</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\fireworks.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="frogs">
-                    <p>Frogs</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\frogs.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="owl">
-                    <p>Owl</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\owl.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="people">
-                    <p>People talking</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\people.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\wind.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
                 <div class="audioPlayer" id="rain">
@@ -165,22 +93,10 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\rain.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="telephone">
-                    <p>Ringing phone</p>
+                <div class="audioPlayer" id="stream">
+                    <p>Water Stream</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\telephone.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="traffic">
-                    <p>Traffic</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\traffic.ogg" autoplay loop type="audio/ogg"></audio>
-                </div>
-
-                <div class="audioPlayer" id="fan">
-                    <p>Fan</p>
-                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ventilator.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\stream.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
                 <div class="audioPlayer" id="waves">
@@ -189,10 +105,34 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\waves.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer" id="wind">
-                    <p>Wind</p>
+                <div class="audioPlayer" id="forest">
+                    <p>Forest</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\wind.ogg" autoplay loop type="audio/ogg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\forest.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="campfire">
+                    <p>Campfire</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\campfire.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="crickets">
+                    <p>Crickets</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\crickets.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="owl">
+                    <p>Owl</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\owl.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="frogs">
+                    <p>Frogs</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\frogs.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
                 <div class="audioPlayer" id="wolf">
@@ -201,46 +141,106 @@
                     <audio id="audio" onloadstart="this.volume=0.0" src="audio\wolf.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Pene</p>
+                <div class="audioPlayer" id="dog">
+                    <p>Dog</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\dog.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Piroca</p>
+                <div class="audioPlayer" id="cat">
+                    <p>Purring Cat</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\cat.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Sapatona</p>
+                <div class="audioPlayer" id="traffic">
+                    <p>Traffic</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\traffic.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Safada</p>
+                <div class="audioPlayer" id="ambulance">
+                    <p>Ambulance</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ambulance.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Safadinha</p>
+                <div class="audioPlayer" id="construction">
+                    <p>Construction</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\construction.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>Jiromba</p>
+                <div class="audioPlayer" id="people">
+                    <p>People</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\people.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
 
-                <div class="audioPlayer">
-                    <p>heheheha</p>
+                <div class="audioPlayer" id="baby">
+                    <p>Baby</p>
                     <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
-                    <audio id="audio" onloadstart="this.volume=0.0" src="" autoplay loop type="audio/mpeg"></audio>
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\baby.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="fireworks">
+                    <p>Fireworks</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\fireworks.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="keyboard">
+                    <p>Keyboard</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\keyboard.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="clock">
+                    <p>Ticking Clock</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\clock.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="telephone">
+                    <p>Ringing Phone</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\telephone.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="ventilator">
+                    <p>Ventilator Fan</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\ventilator.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="fridge">
+                    <p>Fridge</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\fridge.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="tv">
+                    <p>TV</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\tv.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="lo-fi">
+                    <p>Lo-Fi</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\lo-fi.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="arcade">
+                    <p>Arcade Music</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\arcade.ogg" autoplay loop type="audio/ogg"></audio>
+                </div>
+
+                <div class="audioPlayer" id="classical">
+                    <p>Classical Music</p>
+                    <input type="range" name="vol" min="0" max="100" value="0" class="volumeSlider">
+                    <audio id="audio" onloadstart="this.volume=0.0" src="audio\classical.ogg" autoplay loop type="audio/ogg"></audio>
                 </div>
          </div>
 
