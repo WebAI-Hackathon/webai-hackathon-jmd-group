@@ -244,7 +244,7 @@ function start() { //here comes the preset
                     
                     <p id="channel">Ch. 01</p>
 
-                    <p id="waitText"> <-select the sounds that you prefer</p>
+                    <p id="waitText" style="visibility: hidden;"> <-select the sounds that you prefer</p>
 
                     <img src="images/tvLogo_1.gif" id="TVlogo" alt="">
 
