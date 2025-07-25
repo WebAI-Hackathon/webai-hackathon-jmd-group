@@ -43,23 +43,42 @@ document.querySelectorAll('.audioPlayer').forEach(player => {
         });
 
 document.querySelector('[name=adjust_audio]').addEventListener('call', async (e) => {
-  const { desc } = e.detail;
-  const { value } = e.detail;
-  const { sliderNumber } = e.detail;
-  console.log(value);
-  console.log(sliderNumber);
-  document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]').value = value;
-  adjustAudio(document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]'), value, allSounds[sliderNumber-1] + ' audio');
+  const { desc, value, sliderNumbers } = e.detail;
+
+  if (!sliderNumbers || !Array.isArray(sliderNumbers)) {
+    console.warn("No valid slider numbers received.");
+    return;
+  }
+
+  sliderNumbers.forEach((sliderNumber) => {
+    const selector = allSounds[sliderNumber - 1];
+    const slider = document.querySelector(`${selector} input[type=range]`);
+    const audioTag = document.querySelector(`${selector} audio`);
+
+    if (!slider || !audioTag) {
+      console.warn(`Slider or audio not found for slider number: ${sliderNumber}`);
+      return;
+    }
+
+    slider.value = value;
+    adjustAudio(slider, value, audioTag);
+  });
 });
 
 function adjustAudio(desc, value, tag) {
-    desc.value = value
-    document.querySelector(tag).volume = value/100;
-    document.querySelector(tag).play();
-    console.log(desc)   
-  };
+    sliderElement.value = value;
+  audioElement.volume = value / 100;
 
-  document.querySelector('[name=reset_audio]').addEventListener('call', async (e) => {
+  try {
+    audioElement.play();
+  } catch (err) {
+    console.error("Playback error:", err);
+  }
+
+  console.log(`Adjusted slider to ${value}, volume set on:`, audioElement);
+});
+
+document.querySelector('[name=reset_audio]').addEventListener('call', async (e) => {
   const { desc } = e.detail;
   console.log("Reset requested:", desc);
 
@@ -73,6 +92,13 @@ function adjustAudio(desc, value, tag) {
       audio.pause(); 
     }
   });
+});
+
+document.querySelector('[name=generate_image]').addEventListener('call', async (e) => {
+  const { trigger } = e.detail;
+  console.log("Generating image with trigger:", trigger);
+
+  document.getElementById('gen-form').click();
 });
 
  document.getElementById('gen-form').onclick = async () => {
