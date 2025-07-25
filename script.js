@@ -94,6 +94,21 @@ function adjustAudio(desc, value, tag) {
     console.log(desc)   
   };
 
+document.querySelector('[name=reset_audio]').addEventListener('call', async (e) => {
+  const { desc } = e.detail;
+  console.log("Reset requested:", desc);
+
+  allSounds.forEach((selector, index) => {
+    const slider = document.querySelector(selector + ' input[type=range]');
+    const audio = document.querySelector(selector + ' audio');
+
+    if (slider && audio) {
+      slider.value = 0;
+      audio.volume = 0;
+      audio.pause(); 
+    }
+  });
+});
 
 
 document.getElementById('gen-form').onclick = async () => {
