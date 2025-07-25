@@ -77,9 +77,7 @@ function adjustAudio(desc, value, tag) {
 
  document.getElementById('gen-form').onclick = async () => {
   let audioValues = [];
-  let prompt = `The images produced must be photorealistic, never animated.
-Images must be landscapes or scenes, rooms, never brochures or portraits. Include all elements in the image.
-If several elements have the same or similar value, they must have the same prominence in the image. Below is the value followed by the concept:`
+  let prompt = `Realistic image with `
   let totalValue = 0;
 
   document.getElementById("waitText").style.visibility = "visible";
@@ -90,12 +88,19 @@ If several elements have the same or similar value, they must have the same prom
     totalValue += value;
 
     if (value != 0) {
-        valueName = value;
-        audioValues.push({id: r.id, value: valueName})
+          if (value > 0 && value <= 30) {
+        valueName = "a little bit of ";
+        audioValues.push({id: r.id, value: valueName});
+      } else if (value > 30 && value <=60) {
+        valueName = "some ";
+        audioValues.push({id: r.id, value: valueName});
+      } else {
+        valueName = "a lot of ";
+        audioValues.push({id: r.id, value: valueName});
+      }
+
     }
-
-  });
-
+    });
 
   if (totalValue === 0) {
     console.log("All values are zero, image won't generate");
@@ -141,7 +146,7 @@ function start() { //here comes the preset
 
                     <img src="images/staticTV2.gif" id="staticTV" alt="">
                     
-                    <img src="images/raw.png" id="imageTV" style="width: 730px; height: 730">
+                    <img src="images/raw.png" id="imageTV" style="width: 800px; height: 800">
                     
                     <p id="channel">Ch. 01</p>
 
