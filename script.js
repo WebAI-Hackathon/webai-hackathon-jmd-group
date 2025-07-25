@@ -78,21 +78,42 @@ document.querySelectorAll('.audioPlayer').forEach(player => {
         });
 
 document.querySelector('[name=adjust_audio]').addEventListener('call', async (e) => {
-  const { desc } = e.detail;
-  const { value } = e.detail;
-  const { sliderNumber } = e.detail;
-  console.log(value);
-  console.log(sliderNumber);
-  document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]').value = value;
-  adjustAudio(document.querySelector(allSounds[sliderNumber-1] + ' input[type=range]'), value, allSounds[sliderNumber-1] + ' audio');
+  const { desc, value, sliderNumbers } = e.detail;
+
+  if (!sliderNumbers || !Array.isArray(sliderNumbers)) {
+    console.warn("No valid slider numbers received.");
+    return;
+  }
+
+  sliderNumbers.forEach((sliderNumber) => {
+    const selector = allSounds[sliderNumber - 1];
+    const slider = document.querySelector(`${selector} input[type=range]`);
+    const audioTag = document.querySelector(`${selector} audio`);
+
+    if (!slider || !audioTag) {
+      console.warn(`Slider or audio not found for slider number: ${sliderNumber}`);
+      return;
+    }
+
+    slider.value = value;
+    adjustAudio(slider, value, audioTag);
+  });
 });
 
-function adjustAudio(desc, value, tag) {
-    desc.value = value
-    document.querySelector(tag).volume = value/100;
-    document.querySelector(tag).play();
-    console.log(desc)   
-  };
+
+function adjustAudio(sliderElement, value, audioElement) {
+  sliderElement.value = value;
+  audioElement.volume = value / 100;
+
+  try {
+    audioElement.play();
+  } catch (err) {
+    console.error("Playback error:", err);
+  }
+
+  console.log(`Adjusted slider to ${value}, volume set on:`, audioElement);
+}
+
 
 document.querySelector('[name=reset_audio]').addEventListener('call', async (e) => {
   const { desc } = e.detail;
@@ -110,39 +131,29 @@ document.querySelector('[name=reset_audio]').addEventListener('call', async (e) 
   });
 });
 
+document.querySelector('[name=generate_image]').addEventListener('call', async (e) => {
+  const { trigger } = e.detail;
+  console.log("Generating image with trigger:", trigger);
+
+  document.getElementById('gen-form').click();
+});
+
 
 document.getElementById('gen-form').onclick = async () => {
   let audioValues = [];
-  let prompt = "Se presentaran conceptos y valores numéricos, niveles. La página genera imágenes a partir de lo que se escucha y cuánto -Si el valor se acerca a 100, más predominante es en la imagen generada. Mientras más a 0, más pequeño, o más lejano-. Las imagenes producidas deben ser fotorealistas, nunca animadas. Las imagenes serán paisajes o escenarios, habitaciones, nunca folletos, o retratos. Incluye todos los elementos en la imagen. Si varios elementos tienen un valor igual o similar, deben tener el mismo protagonismo en la imagen. A continuación, el valor seguido del concepto:"
+  let prompt = "realistic image with"
   let totalValue = 0;
 
   document.getElementById("waitText").style.visibility = "visible";
 
   document.querySelectorAll('.audioPlayer').forEach(r => {
-    let valueName = "";
     let value = parseInt(r.querySelector("input").value);
     totalValue += value;
 
-    if (value != 0) {
-        valueName = value;
-        audioValues.push({id: r.id, value: valueName})
+    if (value > 0) {
+        let intensity = value <= 50 ? "some" : "a lot of";
+        audioValues.push(`${intensity} ${r.id}`);
     }
-
-    /*
-    if (value > 0 && value <= 30) {
-      valueName = "";
-      audioValues.push({id: r.id, value: valueName});
-    } else if (value > 30 && value <= 60) {
-      valueName = "medium ";
-      audioValues.push({id: r.id, value: valueName});
-    } else if (value > 60) {
-      valueName = "big ";
-      audioValues.push({id: r.id, value: valueName});
-    }
-    */
-
-    console.log(audioValues);
-
   });
 
   if (totalValue === 0) {
@@ -151,9 +162,14 @@ document.getElementById('gen-form').onclick = async () => {
     return;
   }
 
-  audioValues.forEach(v => {
-    prompt = prompt + " " + v.value + " " + v.id;
-  });
+  if (audioValues.length === 1) {
+    prompt += ` ${audioValues[0]}`;
+  } else if (audioValues.length === 2) {
+    prompt += ` ${audioValues[0]} and ${audioValues[1]}`;
+  } else {
+    prompt += ` ${audioValues.slice(0, -1).join(', ')}, and ${audioValues.slice(-1)}`;
+  }
+
   console.log(prompt);
     try {
         document.getElementById("waitText").innerHTML = "Generating image...";
@@ -171,7 +187,7 @@ document.getElementById('gen-form').onclick = async () => {
         console.error(err);
         document.getElementById('screen').innerHTML = `<span class="warn">Error: ${err.message}</span>`;
     }
-}
+};
 
 const OPENAI_API_KEY = 'sk-Uyd5NxnfGjQR-S7UN2eJGQ'; // Replace with your API key
 
