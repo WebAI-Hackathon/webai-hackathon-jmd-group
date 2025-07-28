@@ -17,7 +17,7 @@ const allSounds = [
   '#people-chattering',
   '#baby-crying',
   '#fireworks',
-  '#keyboard',
+  '#typing-keyboard',
   '#clock',
   '#telephone',
   '#ventilator',
