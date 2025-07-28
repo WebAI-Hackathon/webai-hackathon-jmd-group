@@ -141,7 +141,7 @@ document.querySelector('[name=generate_image]').addEventListener('call', async (
 
 document.getElementById('gen-form').onclick = async () => {
   let audioValues = [];
-  let prompt = "a peruvian guy with"
+  let prompt = "realistic image with"
   let totalValue = 0;
 
   document.getElementById("waitText").style.visibility = "visible";
