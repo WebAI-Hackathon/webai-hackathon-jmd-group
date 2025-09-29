@@ -78,7 +78,7 @@ document.querySelectorAll('.audioPlayer').forEach(player => {
         });
 
 document.querySelector('[name=adjust_audio]').addEventListener('call', async (e) => {
-  const adjustments = e.detail;
+  const { adjustments } = e.detail;
 
   if (!adjustments || !Array.isArray(adjustments)) {
     console.warn("No valid slider numbers received.");
@@ -116,9 +116,6 @@ function adjustAudio(sliderElement, value, audioElement) {
 
 
 document.querySelector('[name=reset_audio]').addEventListener('call', async (e) => {
-  const { desc } = e.detail;
-  console.log("Reset requested:", desc);
-
   allSounds.forEach((selector, index) => {
     const slider = document.querySelector(selector + ' input[type=range]');
     const audio = document.querySelector(selector + ' audio');
@@ -132,9 +129,6 @@ document.querySelector('[name=reset_audio]').addEventListener('call', async (e) 
 });
 
 document.querySelector('[name=generate_image]').addEventListener('call', async (e) => {
-  const { trigger } = e.detail;
-  console.log("Generating image with trigger:", trigger);
-
   document.getElementById('gen-form').click();
 });
 
@@ -279,5 +273,6 @@ function hover() {
 function unhover() {
     document.getElementById("staticTV").style.opacity = "30%"
 }
+
 
 
