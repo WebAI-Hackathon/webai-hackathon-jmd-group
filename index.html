@@ -33,17 +33,18 @@
         </div>
 
         <tool name="adjust_audio" description="Adjusts the volume of one or more sound sliders based on a user description.">
-            <prop name="desc" type="string"></prop>
-            <prop name="value" type="number" description="number from 0 to 100"></prop>
-            <prop name="sliderNumbers" type="string" description="comma separated list of slider ids (1-27) that match the description and should be adjusted."></prop>
+            <array name="sound_adjustments" required="">
+                <dict>
+                    <prop name="id" type="string" description="slider id (1-27) that match the sound that should be adjusted."></prop>            <prop name="loudness" type="number" description="loudness of the sound from 0 to 100" <="" prop="">
+        
+                </prop></dict>
+            </array>
         </tool>
        
-        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different"
-            <prop name="desc" type="string"></prop>
+        <tool name="reset_audio" description="sets all of the values to zero if the user asks for it, for a reset or something different">
         </tool>
 
         <tool name="generate_image" description="Genera una imagen basándose en los valores actuales de los sliders de audio.">
-            <prop name="trigger" type="string" description="Una palabra que representa la intención del usuario, como 'crear', 'generar', 'imagen', etc."/>
         </tool>
 
 
@@ -278,4 +279,5 @@
     </body>
 
 </html>
+
 
