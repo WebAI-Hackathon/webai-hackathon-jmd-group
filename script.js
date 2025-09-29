@@ -78,14 +78,14 @@ document.querySelectorAll('.audioPlayer').forEach(player => {
         });
 
 document.querySelector('[name=adjust_audio]').addEventListener('call', async (e) => {
-  const { adjustments } = e.detail;
+  const { sound_adjustments } = e.detail;
 
-  if (!adjustments || !Array.isArray(adjustments)) {
+  if (!sound_adjustments || !Array.isArray(sound_adjustments)) {
     console.warn("No valid slider numbers received.");
     return;
   }
 
-  adjustments.forEach((adjustment) => {
+  sound_adjustments.forEach((adjustment) => {
     const selector = allSounds[adjustment.player_number - 1];
     const slider = document.querySelector(`${selector} input[type=range]`);
     const audioTag = document.querySelector(`${selector} audio`);
@@ -273,6 +273,7 @@ function hover() {
 function unhover() {
     document.getElementById("staticTV").style.opacity = "30%"
 }
+
 
 
 
