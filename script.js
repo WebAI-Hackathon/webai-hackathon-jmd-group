@@ -86,7 +86,7 @@ document.querySelector('[name=adjust_audio]').addEventListener('call', async (e)
   }
 
   adjustments.forEach((adjustment) => {
-    const selector = allSounds[adjustment.id - 1];
+    const selector = allSounds[adjustment.player_number - 1];
     const slider = document.querySelector(`${selector} input[type=range]`);
     const audioTag = document.querySelector(`${selector} audio`);
 
@@ -279,4 +279,5 @@ function hover() {
 function unhover() {
     document.getElementById("staticTV").style.opacity = "30%"
 }
+
 
